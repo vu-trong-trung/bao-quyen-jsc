@@ -1,0 +1,90 @@
+.section-3 {
+  min-height: 15vh;
+  background-color: #fff;
+  padding: 10px 10px; /* Cách lề trái 10px */
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  justify-content: center; /* CĂN GIỮA THEO CHIỀU NGANG */
+  align-items: center; /* CĂN GIỮA THEO CHIỀU DỌC */
+}
+
+/* Tầng trên: Tên + (Ảnh & Icon) */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Để sát lề trái */
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.brand-assets {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-img {
+  height: 35px; /* Chiều cao vừa phải để nằm cạnh tên */
+  width: auto;
+  border-radius: 4px;
+}
+
+.social-list {
+  display: flex;
+  gap: 15px;
+}
+
+.social-list i {
+  font-size: 1.2rem;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-list i:hover {
+  color: #f1c40f;
+}
+
+/* Tầng dưới: Hàng ngang liên hệ */
+.footer-bottom-row {
+  display: flex;
+  /* Dàn đều các mục từ trái sang phải, khoảng trống nằm giữa các mục */
+  justify-content: space-between;
+
+  align-items: center;
+  width: 100%; /* Đảm bảo hàng chiếm hết chiều rộng container */
+  flex-wrap: nowrap; /* Giữ trên 1 hàng (nếu màn hình đủ rộng) */
+
+  padding-top: 15px; /* Khoảng cách với tầng trên */
+
+  /* Bôi đậm chữ như yêu cầu trước đó */
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.contact-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Đảm bảo các mục không bị co quá nhỏ */
+  flex-shrink: 0;
+}
+
+.contact-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #000000;
+  white-space: nowrap; /* Giữ thông tin trên 1 dòng */
+}
+
+.contact-inline-item i {
+  color: #000000;
+  width: 15px;
+}

@@ -1,0 +1,97 @@
+.section-2 {
+  height: 70%;
+  background-color: #ecf0f1; /* Màu xám nhạt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Container chính cho Phần 2 */
+.section-2 {
+  height: 70vh; /* Chiếm 70% chiều cao màn hình */
+  padding: 40px 5%;
+  background-color: #fcfcfc;
+  overflow-y: auto; /* Cho phép cuộn nếu danh mục nhiều */
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+.category-grid {
+  display: grid;
+  /* 1. Tự động tính toán số cột dựa trên kích thước ô (ví dụ mỗi ô tối thiểu 160px) */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+  /* 2. CĂN GIỮA: Toàn bộ lưới sẽ nằm giữa màn hình nếu số lượng menu không lấp đầy hàng */
+  justify-content: center;
+
+  /* 3. Khoảng cách giữa các menu danh mục */
+  gap: 25px;
+
+  /* 4. Cách lề trái 10px như bạn yêu cầu và lề phải để cân đối */
+  padding: 20px 10px;
+
+  /* 5. Chiều rộng tối đa để tránh menu bị dàn quá thưa trên màn hình máy tính lớn */
+  max-width: 1300px;
+  margin: 0 auto; /* Kết hợp với max-width để toàn bộ khối grid nằm giữa section-2 */
+}
+
+/* Từng ô danh mục */
+/* Đảm bảo mỗi item bên trong luôn hướng về tâm */
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Khung ảnh tròn/bo góc vừa khít */
+.category-img-wrapper {
+  width: 160px; /* Kích thước khung */
+  height: 180px;
+  border-radius: 10%; /* Tạo hình tròn (hoặc 20px nếu muốn hình vuông bo góc) */
+  overflow: hidden;
+  background-color: #fff;
+  border: 1.5px solid #eee;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Ảnh bên trong */
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giúp ảnh không bị méo */
+  transition: transform 0.5s ease;
+}
+
+/* Chữ danh mục */
+.category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+.category-count {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* --- HIỆU ỨNG TƯƠNG TÁC --- */
+
+/* Khi rê chuột vào danh mục */
+.category-item:hover .category-img-wrapper {
+  border-color: #f1c40f; /* Đổi viền sang màu vàng đồng bộ Header */
+  transform: translateY(-5px); /* Bay nhẹ lên */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-item:hover .category-img {
+  transform: scale(1.1); /* Zoom nhẹ ảnh bên trong */
+}
+
+.category-item:hover .category-name {
+  color: #d35400; /* Đổi màu chữ sang cam nhấn mạnh */
+}
